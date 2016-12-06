@@ -68,19 +68,17 @@ v1 = var('t1')
 v2 = var('t2')
 
 topology = "ABCDE"
-treeParams1 = [0,1,0,1,0]
-treeParams2 = [0,0,1,1,1]
-treeParams3 = [1,0,1,1,1]
-treeParams4 = [0,1,0,1,1]
-treeParams5 = [0,1,1,0,1]
+treeParams1 = [0,0,0,0,0]
+treeParams2 = [0,1,0,0,1]
+treeParams3 = [0,1,0,1,1]
+treeParams4 = [0,0,1,1,1]
 
 treeParams1.insert(0, topology)
 treeParams2.insert(0, topology)
 treeParams3.insert(0, topology)
 treeParams4.insert(0, topology)
-treeParams5.insert(0, topology)
 
 def OverallLikelihood(t1,t2):
-    return Likelihood(treeParams1,t1,t2) * Likelihood(treeParams2,t1,t2) * Likelihood(treeParams3,t1,t2) * Likelihood(treeParams4,t1,t2) * Likelihood(treeParams5,t1,t2)
+    return Likelihood(treeParams1,t1,t2)^4 * Likelihood(treeParams2,t1,t2)^5 * Likelihood(treeParams3,t1,t2)^3 * Likelihood(treeParams4,t1,t2)^3
 
-plot3d(OverallLikelihood,(t1,0,30),(t2,0,30))
+plot3d(OverallLikelihood,(t1,0,3),(t2,0,6))

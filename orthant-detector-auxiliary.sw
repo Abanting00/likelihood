@@ -90,3 +90,4 @@ def orthantSearch(charMatrix):
         topString = topology[0] + topology[1] + topology[2] + topology[3] + topology[4]
         print(topString)
     return topString
+    

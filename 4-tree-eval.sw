@@ -61,12 +61,10 @@ def Likelihood(topology,treeParams,t1):
 # Initialize for plotting.
 v1 = var('t1')
 
-treeParams1 = [0,0,1,0]
-treeParams2 = [0,0,0,1]
-treeParams3 = [1,1,1,0]
-treeParams4 = [1,1,0,1]
+treeParams1 = [0,0,0,0]
+treeParams2 = [0,0,1,1]
 
 def OverallLikelihood(t1):
-    return Likelihood(topology, treeParams1,t1) * Likelihood(topology, treeParams2,t1) * Likelihood(topology, treeParams3, t1) * Likelihood(topology, treeParams4, t1)
+    return Likelihood(topology, treeParams1,t1)^2  * Likelihood(topology, treeParams2,t1)
 
 plot(OverallLikelihood,(t1,0,19))
