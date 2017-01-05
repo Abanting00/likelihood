@@ -25,4 +25,5 @@ for line in infile:
     outfile.write(line)
 outfile.close()
 
-character_counter(dataset)
+character_count = character_counter(dataset)
+print character_count

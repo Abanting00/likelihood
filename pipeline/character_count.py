@@ -31,7 +31,7 @@ def character_counter(dataset):
 		characters.append(s)
 
 	counter = collections.Counter(characters)
-	print counter
+	return counter
 
 #if __name__ == '__main__':
 #    main()
